@@ -20,8 +20,7 @@ export default function LandingPage() {
           📲 WhatsApp वर मोफत सल्ला घ्या
         </a>
       </section>
-      const supabase = createClient('Pgitu#3$@db.urpcvbzvfiebkqlcjzwd.supabase.co:5432/postgres', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InVycGN2Ynp2ZmllYmtxbGNqendkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTI0ODgwNTQsImV4cCI6MjA2ODA2NDA1NH0.DPFdUyQVW9Pg8gnGmeUemnzbOZG3Vzv42axIbp2JMLA');
-const [status, setStatus] = useState('');
+      
 
 const handleSubmit = async (e) => {
   e.preventDefault();
