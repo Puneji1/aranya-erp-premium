@@ -20,6 +20,27 @@ export default function LandingPage() {
           📲 WhatsApp वर मोफत सल्ला घ्या
         </a>
       </section>
+      const supabase = createClient('https://your-project.supabase.co', 'your-anon-key');
+const [status, setStatus] = useState('');
+
+const handleSubmit = async (e) => {
+  e.preventDefault();
+  const formData = new FormData(e.target);
+  const fullName = formData.get('fullName');
+  const phoneNumber = formData.get('phoneNumber');
+
+  const { error } = await supabase
+    .from('lead_submissions')
+    .insert([{ full_name: fullName, phone_number: phoneNumber }]);
+
+  if (error) {
+    setStatus('त्रुटी आली. कृपया पुन्हा प्रयत्न करा.');
+  } else {
+    setStatus('✅ धन्यवाद! तुमची नोंदणी झाली आहे.');
+    e.target.reset();
+  }
+};
+
       <footer className="mt-16 text-sm text-gray-500">
         © 2025 Aranya Foods. Powered by Vercel. Crafted with ❤️ for Smart MSMEs.
       </footer>
